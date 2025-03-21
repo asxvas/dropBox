@@ -17,6 +17,8 @@ options:
     cord2z: 119 #ending coordinates of the region (y)
     
     world: "schems2" #world of which the dropbox happens 
+    dropbox_delay: 45 minutes #time difference between each drop box event
+    dropbox_despawn_delay: 1 minute and 30 seconds #time for when box despawns after it falls down to ground
 
 
     #the following items are the dropbox items, each number represents the slot in the chest (1-9). For each item just but the amount followed by 'of <item>'. Also accepts nbt data
@@ -108,10 +110,10 @@ function startDropBox():
 every 1 second:
     set {_time} to difference between now and {dropbox::lastdrop}
     if {dropbox::remaining} is not set:
-        if {_time} >= 45 minutes:
+        if {_time} >= {@dropbox_delay}:
             startDropBox()
     else:
-        if difference between now and {dropbox::remaining} is more than 1 minute and 30 seconds:
+        if difference between now and {dropbox::remaining} is more than {@dropbox_despawn_delay}:
             set block at location({dropbox::x}, {dropbox::final::y}, {dropbox::z}, world {dropbox::world}) to air
             delete {dropbox::*}
             delete {dropbox::remaining}
