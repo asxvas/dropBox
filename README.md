@@ -12,4 +12,4 @@ If you want to use this please DM me on Discord, my Discord is (asxv)
 ## How does it actually work?
 - After every so long (Configurable) a dropbox is spawned in the air and falls down at a speed of 4 blocks per second. Once the box falls down players are able to open the box. After configured despawn time. The box is despawned along with all items in it.
 ## Implementation
-- If you are looking to use timers and coordinates of the drop box I have created a somewhat ease to use system for this, I have left some examples below of how to implement the timers and the location in the [Location](https://github.com/asxvas/dropBox/blob/main/location.sk) and the [Timers](https://github.com/asxvas/dropBox/blob/main/timers.sk) files.
+- If you are looking to use timers and coordinates of the drop box I have created a somewhat easy to use system for this, I have left some examples below of how to implement the timers and the location in the [Location](https://github.com/asxvas/dropBox/blob/main/location.sk) and the [Timers](https://github.com/asxvas/dropBox/blob/main/timers.sk) files.
