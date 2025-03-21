@@ -1,0 +1,33 @@
+set {_nextbox} to {@dropbox_delay} #The ending variable is probably not going to work since this is probably in a different file. If this is the case simply replace the ending variable with the delay. E.g. set {_nextbox} to 45 minutes
+remove difference between now and {dropbox::lastdrop} from {_nextbox}
+set {_nextbox} to beautifyTimespan({_nextbox}) #I have used a function to make the timespan look cleaner, you should be able to find it in this file.
+#this code is to get the countdown for the next dropbox
+
+set {_remaindrop} to {@dropbox_despawn_delay} #The ending variable is probably not going to work since this is probably in a different file. If this is the case simply replace the ending variable with the delay. E.g. set {_remaindrop} to 1 minute 30 seconds
+remove difference between now and {dropbox::remaining} from {_remaindrop}
+set {_remaindrop} to beautifyTimespan({_remaindrop}) #I have used a function to make the timespan look cleaner, you should be able to find it in this file.
+#this code is to get the countdown for the remaining dropbox event to end
+
+if {dropbox::remaining} is set:
+    set line 12 of player's scoreboard to "Dropbox: %{_location}% %{_remaindrop}%" #this shows the location of the box in the x,y,z format and then the time remaining
+else:
+    set line 12 of player's scoreboard to "Dropbox: %{_nextbox}%" #this shows the time until the next box
+#this code is an example of me implementing all the timers into a scoreboard. Make sure to change both the line 12's to work with your scoreboard
+
+function beautifyTimespan(time: timespan) :: text:
+	set {_raw} to {_time}.getTicks() / 20
+	set {_seconds} to "%floor(mod({_raw}, 60))%"
+	set {_minutes} to "%floor(mod({_raw}, 60 * 60) / 60)%"
+	set {_hours} to "%floor({_raw} / (60 * 60))%"
+	
+	if {_hours} is not "0":
+		return "%{_hours}%ʜ %{_minutes}%m %{_seconds}%s"
+		stop
+
+	if {_minutes} is not "0":
+		return "%{_minutes}%m %{_seconds}%s"
+		stop
+
+  #This is the timespan cleaner.
+
+  
