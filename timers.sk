@@ -22,7 +22,7 @@ if {dropbox::remaining} is set:
 else:
     set line 12 of player's scoreboard to "Dropbox: %{_nextbox}%"        #this shows the time until the next box
 
-#this code is an example of me implementing all the timers into a scoreboard. Make sure to change both the line 12's to work with your scoreboard
+#this code is an example of me implementing all the timers into a scoreboard. Make sure to change both the line 12's to work with your scoreboard along with the actual format of the syntax
 
 
 
