@@ -1,0 +1,1 @@
+"(%{dropbox::x}%, %{dropbox::final::y}%, %{dropbox::z}%)" #This is how to implement x, y, z coordinate of dropbox. This can be used from anything to a command and scoreboard.
