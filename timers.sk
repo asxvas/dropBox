@@ -43,6 +43,6 @@ function beautifyTimespan(time: timespan) :: text:
 		return "%{_minutes}%m %{_seconds}%s"
 		stop
 
-  #This is the timespan cleaner.
+  #This is the timespan cleaner. (May require Skript-Reflect
 
   
