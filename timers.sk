@@ -17,7 +17,7 @@ set {_remaindrop} to beautifyTimespan({_remaindrop})       #I have used a functi
 
 
 
-if {dropbox::remaining} is set:
+if {dropbox::remaining} is set:      #Checks if a dropbox is active or not
     set line 12 of player's scoreboard to "Dropbox: %{_location}% %{_remaindrop}%"        #this shows the location of the box in the x,y,z format and then the time remaining
 else:
     set line 12 of player's scoreboard to "Dropbox: %{_nextbox}%"        #this shows the time until the next box
